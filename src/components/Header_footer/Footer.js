@@ -7,7 +7,7 @@ function Footer(props) {
                 This project was done by Abhijith,joann,shriram and vaishnav.
             </div>
             <div className='icon'> 
-                <a href='https://www.github.com/'>
+                <a href='https://github.com/slaybhi/intrusion-detection-stystem'>
                 <GitHubIcon fontSize='large'/>
                 </a>
             </div>
