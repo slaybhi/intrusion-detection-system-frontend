@@ -89,10 +89,36 @@ a {
   text-decoration: none; /* no underline */
 }
 
-.testbutton {
+.testbutton1 {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  margin-top: -100px;
+  margin-left: -50px;
+  width: 5%;
+}
+
+.testbutton2 {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  margin-top: -100px;
+  margin-left: -50px;
+  width: 5%;
+}
+.testbutton3 {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  margin-top: -100px;
+  margin-left: -50px;
+  width: 5%;
+}
+.testbutton4 {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -100px;
+   margin-top: -100px;
   margin-left: -50px;
+  width: 5%;
 }

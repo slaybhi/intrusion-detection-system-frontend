@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
-import { Fab } from '@material-ui/core';
+import { Fab,Grid } from '@material-ui/core';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import  dataset from './dataset.csv';
 var _ = require("underscore");
@@ -143,25 +143,34 @@ const parse=()=>{
 const Filter = () => {
    
     return (
-        <div>
-            <div className='testbutton'>
+        <div style={{margin:"300px 200px"}}>
+             <Grid container spacing={12}>
+            <Grid item xs={3}>
                 <Fab variant="extended" onClick={(e)=>convert(e,"neptune")} >
                     <NavigationIcon  />
                     Neptune
                 </Fab>
+            </Grid>
+            <Grid item xs={3}>
                 <Fab variant="extended" onClick={(e)=>convert(e,"multihop")}>
                     <NavigationIcon  />
                     multihop
                 </Fab>
-                <Fab variant="extended" onClick={(e)=>convert(e,"satan")}>
+            </Grid>
+
+            <Grid item xs={3}>
+                <Fab variant="extended" onClick={(e)=>convert(e,"satan")} >
                     <NavigationIcon  />
                    satan
                 </Fab>
+            </Grid>
+            <Grid item xs={3}>
                 <Fab variant="extended" onClick={(e)=>convert(e,"ipsweep")}>
                     <NavigationIcon  />
                     ipsweep
                 </Fab>
-            </div>
+            </Grid>  
+            </Grid>
         </div>
     );
 };
