@@ -3,12 +3,13 @@ import * as d3 from 'd3';
 import { Fab } from '@material-ui/core';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import  dataset from './dataset.csv';
+var _ = require("underscore");
 const { Parser } = require('json2csv');
-var data,subset; //global object
+var data,subset,result; //global object
 
 //the convert function will convert csv to object and then format it (convert strings to numbers) 
  
-const convert = ()=>{
+const convert = (e, attackname)=>{
 
     d3.csv(dataset).then(function(dataset) {
         
@@ -56,21 +57,27 @@ const convert = ()=>{
         //end of for each
         
         data=dataset;   //copying the formatted data to variable data.
-        slice();
+        map(attackname);
 
     }).catch(function(err) {
         throw err;
     })
    }
-
+// map function does the filtering of the dataset and stores it in: result.
+ const map = (attackname) => {
+    result = _.where(data, {attack:attackname});
+    slice();
+  }
+  
+  
 
 //The slice function will slice the array of object from random startig position to fixed size
 const slice = ()=>{
-        var max=11851;
+        var max=result.length-200;
         var min=1;
         var random = Math.floor(Math.random() * (max - min) ) + min;
         
-        subset = data.slice(random,random+1000);
+        subset = result.slice(random,random+200);
         
                                 //subset now contains object to be parsed into csv file and then send.
         parse();
@@ -119,16 +126,18 @@ const parse=()=>{
         "dst_host_serror_rate",
         "dst_host_srv_serror_rate",
         "dst_host_rerror_rate",
-        "dst_host_srv_rerror_rate"
+        "dst_host_srv_rerror_rate",
+        "attack",
+        "level"
         ];
-
+        // var subset = JSON.parse(subset);
         const json2csvParser = new Parser({ fields });
         const subsetcsv = json2csvParser.parse(subset);
         
     console.log(subset);
-        // now subset contains json format and csv contains subsetcsv format.
+    //  console.log(typeof(subset));   // now subset contains json format and csv contains subsetcsv format.
+       
 }
-
 
 
 const Filter = () => {
@@ -136,9 +145,21 @@ const Filter = () => {
     return (
         <div>
             <div className='testbutton'>
-                <Fab variant="extended" onClick={convert} >
+                <Fab variant="extended" onClick={(e)=>convert(e,"neptune")} >
                     <NavigationIcon  />
-                    Simulate attack
+                    Neptune
+                </Fab>
+                <Fab variant="extended" onClick={(e)=>convert(e,"multihop")}>
+                    <NavigationIcon  />
+                    multihop
+                </Fab>
+                <Fab variant="extended" onClick={(e)=>convert(e,"satan")}>
+                    <NavigationIcon  />
+                   satan
+                </Fab>
+                <Fab variant="extended" onClick={(e)=>convert(e,"ipsweep")}>
+                    <NavigationIcon  />
+                    ipsweep
                 </Fab>
             </div>
         </div>
