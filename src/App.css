@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #318197;
 }
 
 @keyframes App-logo-spin {
@@ -37,7 +37,7 @@
   }
 }
 
-
+/* Header */
 header {
   padding:10px 0px;
   transition: all 300ms ease-in;
@@ -68,16 +68,17 @@ header .header_text {
   padding-top: 85px;
 }
 
+
 /* Footer */
 .footer {
-  padding:50px 0px;
+  padding:32px 0px ;
   text-align: center;
   font-size: 25px;
   color:#ffffff;
-  background:#0099cc;
+  background:#000000be;
 }
 .font_righteous {
-  font-family: 'Righteous', cursive;
+  font-family: Righteous, cursive;
 }
 
 .icon{
@@ -89,6 +90,8 @@ a {
   text-decoration: none; /* no underline */
 }
 
+
+/* test page */
 .testbutton1 {
   position: absolute;
   top: 50%;
@@ -106,6 +109,7 @@ a {
   margin-left: -50px;
   width: 5%;
 }
+
 .testbutton3 {
   position: absolute;
   top: 50%;
@@ -121,4 +125,40 @@ a {
    margin-top: -100px;
   margin-left: -50px;
   width: 5%;
+}
+
+/* Home page  */
+
+.lefthalf{
+  position: absolute;
+  overflow: hidden;
+  background-color:#0099cc;
+  width: 50%;
+  height: 91.25%;
+  margin-left: 0px;
+  z-index: -10;
+}
+
+.righthalf {
+  position: absolute;
+  float: left;
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  margin-left: 50%;
+  height: 91.22%;
+  z-index: -10;
+
+}
+
+.bck-logo{
+  background-color:#0099cc;
+  position: absolute;
+  border-radius: 100%;
+  border: 10px solid rgb(255, 255, 255);
+  margin-top: 30%;
+  margin-left: 47%;
+  width: 150px;
+  height: 150px;
+  z-index: -10;
+
 }

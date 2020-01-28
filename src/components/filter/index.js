@@ -130,12 +130,12 @@ const parse=()=>{
         "attack",
         "level"
         ];
-        // var subset = JSON.parse(subset);
+        
         const json2csvParser = new Parser({ fields });
         const subsetcsv = json2csvParser.parse(subset);
         
     console.log(subset);
-    //  console.log(typeof(subset));   // now subset contains json format and csv contains subsetcsv format.
+     // now subset contains json format and csv contains subsetcsv format.
        
 }
 
@@ -143,8 +143,11 @@ const parse=()=>{
 const Filter = () => {
    
     return (
-        <div style={{margin:"300px 200px"}}>
-             <Grid container spacing={12}>
+        <div> 
+            <div style={{paddingTop:"200px", textAlign:"center", fontSize:'40px', fontFamily:'Righteous', color:'#0099cc'}}> Select attack to simulate: </div>
+        <div style={{margin:"100px 200px"}}>
+           
+             <Grid container spacing={3}>
             <Grid item xs={3}>
                 <Fab variant="extended" onClick={(e)=>convert(e,"neptune")} >
                     <NavigationIcon  />
@@ -152,9 +155,9 @@ const Filter = () => {
                 </Fab>
             </Grid>
             <Grid item xs={3}>
-                <Fab variant="extended" onClick={(e)=>convert(e,"multihop")}>
-                    <NavigationIcon  />
-                    multihop
+                <Fab variant="extended" onClick={(e)=>convert(e,"guess_passwd")}>                   {/*fab stands for floating action buttons*/}
+                    <NavigationIcon  />                                                     
+                    guess_passwd
                 </Fab>
             </Grid>
 
@@ -165,12 +168,14 @@ const Filter = () => {
                 </Fab>
             </Grid>
             <Grid item xs={3}>
-                <Fab variant="extended" onClick={(e)=>convert(e,"ipsweep")}>
+                <Fab variant="extended" onClick={(e)=>convert(e,"normal")}>
                     <NavigationIcon  />
-                    ipsweep
+                    normal
                 </Fab>
             </Grid>  
             </Grid>
+            </div>
+            <a href='http://localhost:3000/result' style={{color:'black'}} >result page</a>
         </div>
     );
 };

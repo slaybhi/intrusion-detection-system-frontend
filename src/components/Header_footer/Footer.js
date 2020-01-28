@@ -4,7 +4,7 @@ function Footer(props) {
     return (
         <div className='footer font_righteous'>
             <div>
-                This project was done by Abhijith,joann,shriram and vaishnav.
+                This project was done by Abhijith,Joann,Shriram and Vaishnav.
             </div>
             <div className='icon'> 
                 <a href='https://github.com/slaybhi/intrusion-detection-stystem'>
