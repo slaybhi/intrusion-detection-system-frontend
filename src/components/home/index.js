@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import Signin from '../login/signin';
+import Signup from '../login/signup'
 class Home extends Component {
     render() {
         console.log(window.innerHeight)
@@ -8,7 +9,8 @@ class Home extends Component {
                 <div className='lefthalf'></div>
                 <div className='righthalf'></div>
                 <div className = 'bck-logo'></div>
-                
+                <Signin/>
+                <Signup/>
                 <div style={{fontSize:'40px'}}>
                     <br/>
                 <a href='http://localhost:3000/test'> <button > Test</button> </a>

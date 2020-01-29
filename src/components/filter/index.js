@@ -8,7 +8,6 @@ const { Parser } = require('json2csv');
 var data,subset,result; //global object
 
 //the convert function will convert csv to object and then format it (convert strings to numbers) 
- 
 const convert = (e, attackname)=>{
 
     d3.csv(dataset).then(function(dataset) {
@@ -134,7 +133,9 @@ const parse=()=>{
         const json2csvParser = new Parser({ fields });
         const subsetcsv = json2csvParser.parse(subset);
         
-    console.log(subset);
+        console.log(subset);
+    // window.location.href ='http://localhost:3000/result';            //This can be used for redirecting.
+    
      // now subset contains json format and csv contains subsetcsv format.
        
 }
