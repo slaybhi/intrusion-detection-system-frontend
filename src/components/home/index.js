@@ -3,17 +3,18 @@ import Signin from '../login/signin';
 import Signup from '../login/signup'
 class Home extends Component {
     render() {
-        console.log(window.innerHeight)
         return (
             <div style={{height:`${window.innerHeight-85}px`}}>
                 <div className='lefthalf'></div>
                 <div className='righthalf'></div>
                 <div className = 'bck-logo'></div>
-                <Signin/>
-                <Signup/>
+               <div className='grid-container'>
+                <Signup className='item1'/>
+                <Signin className='item2'/>
+                </div>
                 <div style={{fontSize:'40px'}}>
                     <br/>
-                <a href='http://localhost:3000/test'> <button > Test</button> </a>
+                
                 </div>
             </div>  
         );

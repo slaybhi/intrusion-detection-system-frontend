@@ -9,7 +9,7 @@ class Header extends Component {
                 <AppBar
                 position='fixed'
                 style={{
-                    backgroundColor:'#000000be',
+                    backgroundColor:'#70bcd6ce',
                     boxShadow:'none',
                     padding:'10px 0px'
                 }}
@@ -17,7 +17,7 @@ class Header extends Component {
                     <Toolbar>
                         <div className='header_logo'>
                             <div className='header_text'>
-                                Tester Module
+                               <a href='/'> Tester Module</a>
                             </div>
                         </div>
                     </Toolbar>

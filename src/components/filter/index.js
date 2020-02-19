@@ -72,11 +72,11 @@ const convert = (e, attackname)=>{
 
 //The slice function will slice the array of object from random startig position to fixed size
 const slice = ()=>{
-        var max=result.length-200;
+        var max=result.length-50;
         var min=1;
         var random = Math.floor(Math.random() * (max - min) ) + min;
         
-        subset = result.slice(random,random+200);
+        subset = result.slice(random,random+50);
         
                                 //subset now contains object to be parsed into csv file and then send.
         parse();
