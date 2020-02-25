@@ -52,7 +52,7 @@ class SignUpForm extends Component {
               </div>
               
               <div className="FormField1">
-                  <button className="FormField__Button mr-20">Sign Up</button> 
+                  <button className="FormField__Button mr-20" >Sign Up</button> 
               </div>
             </form>
           </div>

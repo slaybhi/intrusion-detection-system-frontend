@@ -54,7 +54,7 @@ class SignInForm extends Component {
               </div>
               
               <div className="FormField">
-              <button className="FormField__Button mr-20" >Sign In </button> 
+              <button className="FormField__Button mr-20"style={{backgroundColor:'#70bdd6',color:'white'}} >Sign In </button> 
               </div>
               
             </form>

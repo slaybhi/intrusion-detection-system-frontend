@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'animate.css'
 import Home from './components/home';
 import test from './components/filter'
 import Result from './components/result';
