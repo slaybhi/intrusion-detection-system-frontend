@@ -144,7 +144,7 @@ const parse=()=>{
 const Filter = () => {
    
     return (
-        <div> 
+        <div style={{height:`${window.innerHeight-85}px`}}> 
             <div style={{paddingTop:"200px", textAlign:"center", fontSize:'40px', fontFamily:'Righteous', color:'#0099cc'}}> Select attack to simulate: </div>
         <div style={{margin:"100px 200px"}}>
            

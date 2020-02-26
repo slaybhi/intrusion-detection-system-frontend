@@ -1,23 +1,60 @@
 import React from 'react';
-import Card from './card'
+// import Spin from './spin'
 var result = {flag:1}
 var message = "attack detected. it was an example attack"
 const Result = () => {
 
-            return <div style={{height:`${window.innerHeight-85}px`}}>
-                {message}
-            <div className='cards-collection'>
-                <div className='jiggle card'><Card name='Decision tree' bck='https://static.vecteezy.com/system/resources/previews/000/271/825/non_2x/springtime-tree-vector-illustration.jpg'></Card></div>
-                <div className='jiggle card'><Card name='Logistic Regression' bck='http://chanakya.ca/wp-content/uploads/2018/05/logistic-regression-example-e1527081563263.jpg'></Card></div>
-                <div className='jiggle card'><Card name='Random forest' bck='https://previews.123rf.com/images/vectoroksana/vectoroksana1909/vectoroksana190900901/129538609-blue-line-trees-icon-isolated-on-white-background-forest-symbol-abstract-circle-random-dots-vector-i.jpg'></Card></div>
-                <div className='jiggle card'> <Card name='Bayes clustering' bck='https://i.ya-webdesign.com/images/learning-vector-artificial-intelligence-12.png'></Card></div>
-                <div className='jiggle card'><Card name='Deep learning' bck='https://image.flaticon.com/icons/png/512/2043/2043014.png'></Card></div>    
-            </div>
+return <div >
+     
+     
+     
+    <div style={{height:`${window.innerHeight-85}px`}}>
+                    
+                    <div className='message'>
+                    {message} 
+                    </div>
                 
-        
+    </div>
+
+    {/* <Spin/> */}
+
+    <div class="page-content" style={{height:`${window.innerHeight-505}px`}}>
 
 
-            </div>
+    <div class="card">
+        <div class="content">
+        <h2 class="title">Random Forest</h2>
+        <p class="copy">info about random forest</p>
+        {/* <button class="btn">View Trips</button> */}
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+        <h2 class="title">logical regression</h2>
+        <p class="copy">info about logical regression</p>
+        {/* <button class="btn">View Trips</button> */}
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+        <h2 class="title">decision tree</h2>
+        <p class="copy">info about decision tree</p>
+        {/* <button class="btn">Book Now</button> */}
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+        <h2 class="title">deep learning</h2>
+        <p class="copy">info about deep learning</p>
+        {/* <button class="btn">Book Now</button> */}
+        </div>
+    </div>
+    </div>
+                    
+            
+
+
+</div>
       
 };
 
