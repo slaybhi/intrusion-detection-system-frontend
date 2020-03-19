@@ -41,7 +41,7 @@ class SignInForm extends Component {
         return (
         <div className="FormCenter">
 
-            <h3>Login</h3>
+            <h3>Sign in</h3>
             <form onSubmit={this.handleSubmit} className="FormFields" >
             <div className="FormField">
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>

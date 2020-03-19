@@ -1,5 +1,5 @@
 import React from 'react';
-// import Spin from './spin'
+
 var result = {flag:1}
 var message = "attack detected. it was an example attack"
 const Result = () => {
@@ -13,10 +13,14 @@ return <div >
                     <div className='message'>
                     {message} 
                     </div>
-                
+                   
+                   <div className='button-details'>
+                    <button>view study details</button>
+                    <button>Sign Out</button>
+                    </div>
     </div>
 
-    {/* <Spin/> */}
+    
 
     <div class="page-content" style={{height:`${window.innerHeight-505}px`}}>
 
