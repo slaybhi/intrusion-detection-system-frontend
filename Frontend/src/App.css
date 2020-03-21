@@ -81,13 +81,16 @@ a {
 }
 
 /* Home page  */
+.background{
+  height: 870px;
+}
 
 .lefthalf{
   position: absolute;
   overflow: hidden;
   background-color:#70bdd6;
   width: 50%;
-  height: 100vh;
+  height: inherit;
   margin-left: 0px;
   z-index: -10;
 }
