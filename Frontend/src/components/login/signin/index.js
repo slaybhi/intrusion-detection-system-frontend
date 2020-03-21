@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Filter from '../../filter' 
+import {Alert} from 'react-bootstrap'
+
 
 class SignInForm extends Component {
     constructor() {
@@ -6,8 +9,11 @@ class SignInForm extends Component {
 
         this.state = {
             email: '',
-            password: ''
-        };
+            password: '',
+            email_invalid:false,
+            wrong_password:false,
+            success_login:true
+        }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,26 +21,82 @@ class SignInForm extends Component {
 
     handleChange(e) {
         let target = e.target;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let value = target.value;
         let name = target.name;
 
         this.setState({
           [name]: value
         });
     }
-
-    handleSubmit(e) {
-        e.preventDefault();
-
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
-        // <a href='http://localhost:3000/test'> 
-        window.location.href = "http://localhost:3000/test";
-
+    set_state=(state_to_be_set,value)=> {
+      this.setState({
+        [state_to_be_set]:value
+      })
     }
+    handleSubmit(e) {
+      const pointerToThis=this;  
+      e.preventDefault();
 
-   
-   
+       const data={
+          email:this.state.email,
+          password:this.state.password
+        }
+
+        
+      
+  
+      let body_data=JSON.stringify(data);
+      var url="http://127.0.0.1:5000/signin"
+      var request= {
+          method:"POST",
+          body:body_data,
+          headers:{
+              "Content-Type":"application/json",
+              'Accept':'application/json',
+              "Access-Control-Allow-Origin":"*",
+              'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+              'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With, Accept'
+        }
+      }
+console.log("post is working")
+    fetch(url,request)
+    .then(function(response){
+      if(response.status!=200){
+        console.log("An error has occured with status code" + response.status)
+
+      }
+      else{
+        console.log("workingggg")
+        response.json().then(function(data){
+          var code=data.key;
+          console.log(code);
+          if(code=='0010'){
+            pointerToThis.set_state('email_invalid',true);
+            pointerToThis.set_state('wrong_password',false);
+
+          }
+          else
+              if(code=='0020'){
+                pointerToThis.set_state('email_invalid',false);
+                pointerToThis.set_state('wrong_password',true);
+
+              }
+
+          else  
+              if(code=='0030'){
+                pointerToThis.set_state('success_login',true);
+              }
+        });
+      }
+
+    })
+
+    .catch(function(error){
+      console.log("error:"+ error)
+    })
+
+  }
+
    
    
     render() {
@@ -54,8 +116,18 @@ class SignInForm extends Component {
               </div>
               
               <div className="FormField">
-              <button className="FormField__Button mr-20"style={{backgroundColor:'#70bdd6',color:'white'}} >Sign In </button> 
+              <button type="submit" className="FormField__Button mr-20"style={{backgroundColor:'#70bdd6',color:'white'}} >Sign In </button> 
               </div>
+
+
+              {this.state.email_invalid && 
+              <Alert variant='warning'>Email doesn't exist, please sign up</Alert>}
+
+              {this.state.wrong_password && 
+              <Alert variant='danger'>Incorrect Password</Alert>}
+
+
+              {this.state.success_login && <Filter />}
               
             </form>
           
