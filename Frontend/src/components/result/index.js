@@ -2,7 +2,7 @@ import React from 'react';
 import Details from './details';
 import {scroller,Element} from 'react-scroll';
 var result = {flag:1}
-var message = "attack detected. it was an example attack"
+var message = "Attack detected. It was an example attack"
 const Result = () => {
 
 
@@ -19,8 +19,8 @@ return <div >
 
     <div style={{height:`${window.innerHeight-85}px`}}>
                     
-                    <div className='message'>
-                    {message} 
+                    <div className='message typewriter'>
+                    <h1>{message} </h1>
                     </div>
                    
                    <div className='button-details'>
