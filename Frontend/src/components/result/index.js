@@ -32,8 +32,8 @@ return <div >
     <Element name='details'>
     <Details />
     </Element>
-            
-    <button >Sign Out</button>
+
+    <button className='btn-result-signout' >Sign Out</button>
 
 </div>
       
