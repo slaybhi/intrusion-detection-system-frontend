@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Filter from '../../filter' 
 import {Alert} from 'react-bootstrap'
+import { BrowserRouter as Router, Route,Switch, Link } from "react-router-dom";
+
 
 
 class SignInForm extends Component {
@@ -85,6 +87,7 @@ console.log("post is working")
           else  
               if(code=='0030'){
                 pointerToThis.set_state('success_login',true);
+                console.log("success")
               }
         });
       }
@@ -116,7 +119,7 @@ console.log("post is working")
               </div>
               
               <div className="FormField">
-              <button type="submit" className="FormField__Button mr-20"style={{backgroundColor:'#70bdd6',color:'white'}} >Sign In </button> 
+              <button type="submit" className="FormField__Button mr-20"style={{backgroundColor:'#70bdd6',color:'white'}} onChange={this.handleChange} >Sign In </button> 
               </div>
 
 
@@ -127,7 +130,7 @@ console.log("post is working")
               <Alert variant='danger'>Incorrect Password</Alert>}
 
 
-              {this.state.success_login && <Filter />}
+              {this.state.success_login && <Filter/>}
               
             </form>
           
