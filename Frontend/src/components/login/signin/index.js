@@ -130,8 +130,7 @@ console.log("post is working")
               <Alert variant='danger'>Incorrect Password</Alert>}
 
 
-              {this.state.success_login && <Filter/>}
-              
+             {this.state.success_login && window.location.replace("/filter")}
             </form>
           
           

@@ -177,9 +177,9 @@ const Filter = () => {
             </Grid>
             </div>
             
-            <a href='http://localhost:3000/result' style={{color:'black'}} >result page</a>
+            <a href='http://localhost:3000/result' style={{color:'black'}} >Result page</a>
             <div className='button-details' style={{marginTop:'100px'}}>
-            <button>Sign Out</button>
+            <button><a href="http://localhost:3000" >Sign Out</a></button>
             </div>
         </div>
     );

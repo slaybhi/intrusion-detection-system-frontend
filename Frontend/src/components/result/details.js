@@ -8,28 +8,42 @@ const Details = () => {
         <div class="card">
             <div class="content">
             <h2 class="title">Random Forest</h2>
-            <p class="copy">info about random forest</p>
+            <p class="copy">Accuracy: 98.6</p>
             {/* <button class="btn">View Trips</button> */}
             </div>
         </div>
         <div class="card">
             <div class="content">
-            <h2 class="title">logical regression</h2>
-            <p class="copy">info about logical regression</p>
+            <h2 class="title">KNN</h2>
+            <p class="copy">Accuracy: 97.1%</p>
             {/* <button class="btn">View Trips</button> */}
             </div>
         </div>
         <div class="card">
             <div class="content">
             <h2 class="title">decision tree</h2>
-            <p class="copy">info about decision tree</p>
+            <p class="copy">Accuracy: 98.2%</p>
             {/* <button class="btn">Book Now</button> */}
             </div>
         </div>
         <div class="card">
             <div class="content">
             <h2 class="title">deep learning</h2>
-            <p class="copy">info about deep learning</p>
+            <p class="copy">Accuracy: 99.99%</p>
+            {/* <button class="btn">Book Now</button> */}
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+            <h2 class="title">SVM</h2>
+            <p class="copy">Accuracy: 86.6%</p>
+            {/* <button class="btn">Book Now</button> */}
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+            <h2 class="title">Naive Bayes</h2>
+            <p class="copy">69.4%</p>
             {/* <button class="btn">Book Now</button> */}
             </div>
         </div>
