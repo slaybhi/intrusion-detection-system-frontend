@@ -2,10 +2,11 @@ import React from 'react';
 import Details from './details';
 import {scroller,Element} from 'react-scroll';
 var result = {flag:1}
-var message = "Attack detected. It was an example attack"
-const Result = () => {
+// var message = "Attack detected. It was an example attack"
+const Result = (props) => {
 
-
+    var message = props.location.state.message;
+    
     const scrolltoelement = (element) =>{
         scroller.scrollTo(element,{
             duration:1500,
