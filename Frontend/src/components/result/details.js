@@ -2,49 +2,49 @@ import React from 'react';
 
 const Details = () => {
     return (
-        <div class="page-content" style={{height:`${window.innerHeight-505}px`}}>
+        <div className="page-content" style={{height:`${window.innerHeight-505}px`}}>
 
 
-        <div class="card">
-            <div class="content">
-            <h2 class="title">Random Forest</h2>
-            <p class="copy">Accuracy: 98.6</p>
-            {/* <button class="btn">View Trips</button> */}
+        <div className="card">
+            <div className="content">
+            <h2 className="title">Random Forest</h2>
+            <p className="copy">Accuracy: 98.6</p>
+            {/* <button className="btn">View Trips</button> */}
             </div>
         </div>
-        <div class="card">
-            <div class="content">
-            <h2 class="title">KNN</h2>
-            <p class="copy">Accuracy: 97.1%</p>
-            {/* <button class="btn">View Trips</button> */}
+        <div className="card">
+            <div className="content">
+            <h2 className="title">KNN</h2>
+            <p className="copy">Accuracy: 97.1%</p>
+            {/* <button className="btn">View Trips</button> */}
             </div>
         </div>
-        <div class="card">
-            <div class="content">
-            <h2 class="title">decision tree</h2>
-            <p class="copy">Accuracy: 98.2%</p>
-            {/* <button class="btn">Book Now</button> */}
+        <div className="card">
+            <div className="content">
+            <h2 className="title">decision tree</h2>
+            <p className="copy">Accuracy: 98.2%</p>
+            {/* <button className="btn">Book Now</button> */}
             </div>
         </div>
-        <div class="card">
-            <div class="content">
-            <h2 class="title">deep learning</h2>
-            <p class="copy">Accuracy: 99.99%</p>
-            {/* <button class="btn">Book Now</button> */}
+        <div className="card">
+            <div className="content">
+            <h2 className="title">deep learning</h2>
+            <p className="copy">Accuracy: 99.99%</p>
+            {/* <button className="btn">Book Now</button> */}
             </div>
         </div>
-        <div class="card">
-            <div class="content">
-            <h2 class="title">SVM</h2>
-            <p class="copy">Accuracy: 86.6%</p>
-            {/* <button class="btn">Book Now</button> */}
+        <div className="card">
+            <div className="content">
+            <h2 className="title">SVM</h2>
+            <p className="copy">Accuracy: 86.6%</p>
+            {/* <button className="btn">Book Now</button> */}
             </div>
         </div>
-        <div class="card">
-            <div class="content">
-            <h2 class="title">Naive Bayes</h2>
-            <p class="copy">69.4%</p>
-            {/* <button class="btn">Book Now</button> */}
+        <div className="card">
+            <div className="content">
+            <h2 className="title">Naive Bayes</h2>
+            <p className="copy">69.4%</p>
+            {/* <button className="btn">Book Now</button> */}
             </div>
         </div>
         </div>

@@ -3,9 +3,12 @@ import * as d3 from 'd3';
 import { Fab,Grid } from '@material-ui/core';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import  dataset from './dataset.csv';
+import axios from 'axios'
 var _ = require("underscore");
 const { Parser } = require('json2csv');
 var data,subset,result; //global object
+
+var message;
 
 //the convert function will convert csv to object and then format it (convert strings to numbers) 
 const convert = (e, attackname)=>{
@@ -132,8 +135,16 @@ const parse=()=>{
         
         const json2csvParser = new Parser({ fields });
         const subsetcsv = json2csvParser.parse(subset);
+
+        axios.post('http://localhost:8080/detect', {
+            csvFile: subsetcsv
+        })
+        .then(resp => {
+            console.log(resp)
+            message = resp.data
+        })
         
-        console.log(subset);
+        // console.log(subset);
     // window.location.href ='http://localhost:3000/result';            //This can be used for redirecting.
     
      // now subset contains json format and csv contains subsetcsv format.
@@ -141,48 +152,68 @@ const parse=()=>{
 }
 
 
-const Filter = () => {
-   
-    return (
-        <div style={{height:`${window.innerHeight-85}px`}}> 
-            <div style={{paddingTop:"200px", textAlign:"center", fontSize:'40px', fontFamily:'Righteous', color:'#0099cc'}}> Select attack to simulate: </div>
-        <div style={{margin:"100px 200px"}}>
-           
-             <Grid container spacing={3}>
-            <Grid item xs={3}>
-                <Fab variant="extended" onClick={(e)=>convert(e,"neptune")} >
-                    <NavigationIcon  />
-                    Neptune
-                </Fab>
-            </Grid>
-            <Grid item xs={3}>
-                <Fab variant="extended" onClick={(e)=>convert(e,"guess_passwd")}>                   {/*fab stands for floating action buttons*/}
-                    <NavigationIcon  />                                                     
-                    guess_passwd
-                </Fab>
-            </Grid>
+class Filter extends React.Component {
 
-            <Grid item xs={3}>
-                <Fab variant="extended" onClick={(e)=>convert(e,"satan")} >
-                    <NavigationIcon  />
-                   satan
-                </Fab>
-            </Grid>
-            <Grid item xs={3}>
-                <Fab variant="extended" onClick={(e)=>convert(e,"normal")}>
-                    <NavigationIcon  />
-                    normal
-                </Fab>
-            </Grid>  
-            </Grid>
+    constructor(props) {
+        super(props)
+
+        this.redirect = this.redirect.bind(this)
+    }
+
+    redirect() {
+        
+        console.log(message)
+
+        this.props.history.push({pathname: '/result', state:{
+                message: message
+            }
+        })
+    }
+
+    render() {
+        return (
+            <div style={{height:`${window.innerHeight-85}px`}}> 
+                <div style={{paddingTop:"200px", textAlign:"center", fontSize:'40px', fontFamily:'Righteous', color:'#0099cc'}}> Select attack to simulate: </div>
+            <div style={{margin:"100px 200px"}}>
+                
+                    <Grid container spacing={3}>
+                <Grid item xs={3}>
+                    <Fab variant="extended" onClick={(e)=>convert(e,"neptune")} >
+                        <NavigationIcon  />
+                        Neptune
+                    </Fab>
+                </Grid>
+                <Grid item xs={3}>
+                    <Fab variant="extended" onClick={(e)=>convert(e,"guess_passwd")}>                   {/*fab stands for floating action buttons*/}
+                        <NavigationIcon  />                                                     
+                        guess_passwd
+                    </Fab>
+                </Grid>
+
+                <Grid item xs={3}>
+                    <Fab variant="extended" onClick={(e)=>convert(e,"satan")} >
+                        <NavigationIcon  />
+                        satan
+                    </Fab>
+                </Grid>
+                <Grid item xs={3}>
+                    <Fab variant="extended" onClick={(e)=>convert(e,"normal")}>
+                        <NavigationIcon  />
+                        normal
+                    </Fab>
+                </Grid>  
+                </Grid>
+                </div>
+
+
+                
+                <div onClick={this.redirect} style={{color:'black'}} >result page</div>
+                <div className='button-details' style={{marginTop:'100px'}}>
+                <button>Sign Out</button>
+                </div>
             </div>
-            
-            <a href='http://localhost:3000/result' style={{color:'black'}} >result page</a>
-            <div className='button-details' style={{marginTop:'100px'}}>
-            <button>Sign Out</button>
-            </div>
-        </div>
-    );
+        );
+    }
 };
 
 export default Filter;
