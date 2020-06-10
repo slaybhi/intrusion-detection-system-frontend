@@ -7,7 +7,7 @@ import Result from './components/result';
 //import Login from './components/login'
 import {Switch,Route} from 'react-router-dom';
 import Layout from './hoc/layout' 
-function Routes() {
+function Routes(props) {
   return (
     <div className="App">
       <Layout>

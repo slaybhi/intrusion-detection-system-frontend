@@ -52,7 +52,7 @@ class SignUpForm extends Component {
   
        
         let body_data=JSON.stringify(data);
-        var url='http://127.0.0.1:8080/signup';
+        var url='http://127.0.0.1:8080/user/signup';
         var request={
           method:"POST",
           body:body_data,
