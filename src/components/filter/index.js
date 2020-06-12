@@ -208,9 +208,7 @@ class Filter extends React.Component {
 
                 
                 <div onClick={this.redirect} style={{color:'black'}} >result page</div>
-                <div className='button-details' style={{marginTop:'100px'}}>
-                <button>Sign Out</button>
-                </div>
+                
             </div>
         );
     }

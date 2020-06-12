@@ -34,7 +34,7 @@ return <div >
     <Details />
     </Element>
 
-    <button className='btn-result-signout' >Sign Out</button>
+    <button className='btn-result-signout' ><a href='/'>Sign Out</a></button>
 
 </div>
       
