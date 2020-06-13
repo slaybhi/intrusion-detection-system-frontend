@@ -87,8 +87,8 @@ class SignUpForm extends Component {
           console.log("error"+error);
         })
       
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
+        // console.log('The form was submitted with the following data:');
+        // console.log(this.state);
     }
   
     render() {

@@ -15,7 +15,6 @@ function Routes(props) {
         <Route path='/' exact component={Home}/>
         <Route path='/filter' exact component={Filter}/>
         <Route path='/result' exact component={Result}/>
-        
         </Switch>
       </Layout>
     </div>
