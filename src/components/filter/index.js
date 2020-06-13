@@ -14,7 +14,6 @@ class Filter extends React.Component {
 
         super(props)
 
-        this.redirect = this.redirect.bind(this)
         this.mapPacket = this.mapPacket.bind(this)
         this.slice = this.slice.bind(this)
         this.convert = this.convert.bind(this)
