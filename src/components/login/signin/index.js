@@ -60,7 +60,7 @@ class SignInForm extends Component {
               'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With, Accept'
         }
       }
-console.log("post is working")
+// console.log("post is working")
     fetch(url,request)
     .then(function(response){
       if(response.status!=200){
@@ -68,10 +68,10 @@ console.log("post is working")
 
       }
       else{
-        console.log("workingggg")
+        // console.log("workingggg")
         response.json().then(function(data){
           var code=data.key;
-          console.log(code);
+          // console.log(code);
           if(code=='0010'){
             pointerToThis.set_state('email_invalid',true);
             pointerToThis.set_state('wrong_password',false);
