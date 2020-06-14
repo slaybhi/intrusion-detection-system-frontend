@@ -18,6 +18,7 @@ class SignUpForm extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clear = this.clear.bind(this)
     }
 
     handleChange(e) {
@@ -28,6 +29,13 @@ class SignUpForm extends Component {
         this.setState({
           [name]: value
         });
+    }
+
+    clear() {
+      document.getElementById("name").value = ""
+      document.getElementById("password").value = ""
+      document.getElementById("email").value = ""
+
     }
 
     set_state=(state_to_be_set,value) => {
@@ -78,6 +86,7 @@ class SignUpForm extends Component {
               if(data.key==='0050'){
                 pointerToThis.set_state('email_exist',false);
                 pointerToThis.set_state('signup_success',true);
+                pointerToThis.clear()
               }
 
             })
@@ -112,10 +121,7 @@ class SignUpForm extends Component {
               
               <div className="FormField1">
                   <button className="FormField__Button mr-20" variant="success" type="submit" onClick={this.handleSubmit} >Sign Up</button> 
-              </div>
-
-
-        
+              </div>        
 
         {
           this.state.email_exist && 
