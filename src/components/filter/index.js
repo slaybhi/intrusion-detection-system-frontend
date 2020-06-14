@@ -83,12 +83,29 @@ class Filter extends React.Component {
                 csvFile: subsetcsv
             })
             .then(resp => {
-                this.props.history.push({
-                    pathname: '/result', state:{message: resp.data}
-                })
                 this.setState({
                     isLoading: false
                 })
+                this.props.history.push({
+                    pathname: '/result', state:{message: resp.data.message}
+                })
+
+                //save log to file
+                let filename= "log.txt"
+                let contentType = "text/plain;charset=utf-8;"
+                if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob([decodeURIComponent(encodeURI(resp.data.log))], { type: contentType });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                  } else {
+                    var a = document.createElement('a');
+                    a.download = filename;
+                    a.href = 'data:' + contentType + ',' + encodeURIComponent(resp.data.log);
+                    a.target = '_blank';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                  }
+                console.log(resp.data.log)
             })
            
     }
